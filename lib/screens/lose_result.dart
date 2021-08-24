@@ -79,6 +79,15 @@ class LoseResult extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: primaryColor,
                                       borderRadius: BorderRadius.circular(30)),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/lose.png'),
+                                          fit: BoxFit.fitHeight),
+                                    ),
+                                  ),
                                 ),
                                 Text(
                                   'Try again',

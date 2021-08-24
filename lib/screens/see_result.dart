@@ -121,7 +121,7 @@ class _SeeResultState extends State<SeeResult> {
                                           padding: const EdgeInsets.all(8.0),
                                           child: Icon(
                                             Icons
-                                                .expand, //expand_more/keyboard_arrow_down
+                                                .expand_more, //keyboard_arrow_down
                                             color: greyColor,
                                             size: 18,
                                           ),
