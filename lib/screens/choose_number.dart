@@ -25,6 +25,11 @@ class _ChooseNumberState extends State<ChooseNumber>
   String enterednumbers = '';
   AnimationController? controller;
   Animation<double>? animation;
+  String firstNUm = '';
+  String secNum = '';
+  String thirdNum = '';
+  String forthNum = '';
+  String fifthNum = '';
 
   @override
   void initState() {
@@ -143,7 +148,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 ),
                                 child: Center(
                                     child: Text(
-                                  '12',
+                                  firstNUm,
                                   style: TextStyle(
                                       color: primaryColor, fontSize: 18),
                                 )),
@@ -157,7 +162,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 ),
                                 child: Center(
                                     child: Text(
-                                  '18',
+                                  secNum,
                                   style: TextStyle(
                                       color: primaryColor, fontSize: 18),
                                 )),
@@ -171,7 +176,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 ),
                                 child: Center(
                                     child: Text(
-                                  '22',
+                                  thirdNum,
                                   style: TextStyle(
                                       color: primaryColor, fontSize: 18),
                                 )),
@@ -185,7 +190,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 ),
                                 child: Center(
                                     child: Text(
-                                  '26',
+                                  forthNum,
                                   style: TextStyle(
                                       color: primaryColor, fontSize: 18),
                                 )),
@@ -199,7 +204,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 ),
                                 child: Center(
                                     child: Text(
-                                  '30',
+                                  fifthNum,
                                   style: TextStyle(
                                       color: primaryColor, fontSize: 18),
                                 )),
@@ -247,7 +252,7 @@ class _ChooseNumberState extends State<ChooseNumber>
                                 'Single',
                                 style: TextStyle(color: Colors.grey[600]),
                               ),
-                              Icon(Icons.arrow_drop_down),
+                              Icon(Icons.expand_more),
                             ],
                           )
                         ],
@@ -309,10 +314,46 @@ class _ChooseNumberState extends State<ChooseNumber>
   //   return list;
   // }
 
+  textSplitter() {
+    var nums = enterednumbers.split('|');
+    for (var i = 0; i < nums.length; i++) {
+      switch (i) {
+        case 0:
+          setState(() {
+            firstNUm = nums[0];
+          });
+          break;
+        case 1:
+          setState(() {
+            secNum = nums[1];
+          });
+          break;
+        case 2:
+          setState(() {
+            thirdNum = nums[2];
+          });
+          break;
+        case 3:
+          setState(() {
+            forthNum = nums[3];
+          });
+          break;
+        case 4:
+          setState(() {
+            fifthNum = nums[4];
+          });
+          break;
+      }
+    }
+  }
+
   _onKeyboardButtonPressed(String text) {
     setState(() {
-      if (enterednumbers.length < widget.expectedDigits) {
-        enterednumbers += text;
+      if (enterednumbers.split('|').length < widget.expectedDigits) {
+        enterednumbers.isEmpty
+            ? enterednumbers += text
+            : enterednumbers += '|' + text;
+        textSplitter();
       }
     });
   }
