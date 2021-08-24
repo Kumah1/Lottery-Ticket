@@ -79,6 +79,15 @@ class WinResult extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: primaryColor,
                                       borderRadius: BorderRadius.circular(30)),
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(30),
+                                      image: DecorationImage(
+                                          image: AssetImage(
+                                              'assets/images/jub.png'),
+                                          fit: BoxFit.fitHeight),
+                                    ),
+                                  ),
                                 ),
                                 Text(
                                   YOU_GET + ' \$2500',

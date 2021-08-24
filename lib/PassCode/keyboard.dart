@@ -27,13 +27,11 @@ class KeyboardUIConfig {
 class Keyboard extends StatelessWidget {
   final KeyboardUIConfig? keyboardUIConfig;
   final KeyboardTapCallback? onKeyboardTap;
-  final bool? shouldShowCancel;
 
   Keyboard({
     Key? key,
     @required this.keyboardUIConfig,
     @required this.onKeyboardTap,
-    this.shouldShowCancel = true,
   }) : super(key: key);
 
   @override
@@ -113,7 +111,7 @@ class Keyboard extends StatelessWidget {
           child: text.isNotEmpty
               ? InkWell(
                   highlightColor: keyboardUIConfig!.primaryColor,
-                  splashColor: keyboardUIConfig!.primaryColor.withOpacity(0.4),
+                  splashColor: keyboardUIConfig!.primaryColor,
                   onTap: () {
                     onKeyboardTap!(text);
                   },
@@ -131,7 +129,7 @@ class Keyboard extends StatelessWidget {
           ? BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                  color: keyboardUIConfig!.primaryColor,
+                  color: keyboardUIConfig!.primaryColor.withOpacity(0.2),
                   width: keyboardUIConfig!.digitBorderWidth),
             )
           : null,

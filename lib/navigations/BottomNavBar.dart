@@ -57,17 +57,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
               ),
               child: Stack(
                 children: [
-                  Container(
-                    height: 140,
-                    width: double.infinity,
-                    color: primaryColor,
-                    child: Center(
-                      child: Text(
-                        APP_TITLE,
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: whiteColor,
-                          fontWeight: FontWeight.bold,
+                  Opacity(
+                    opacity: 0.8,
+                    child: Container(
+                      height: 140,
+                      width: double.infinity,
+                      color: primaryColor,
+                      child: Center(
+                        child: Text(
+                          APP_TITLE,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: whiteColor,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:lottery/Config/pallete.dart';
 import 'package:lottery/PassCode/circle.dart';
 import 'package:lottery/PassCode/keyboard.dart';
@@ -62,145 +63,153 @@ class _ChooseNumberState extends State<ChooseNumber>
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/images/bg.jpg'),
+                fit: BoxFit.fitHeight),
+          ),
           child: Stack(
             children: [
-              Container(
-                height: 300,
-                width: double.infinity,
-                color: primaryColor,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            icon: Icon(
-                              Icons.arrow_back_ios,
-                              color: Colors.white,
-                            ),
-                          ),
-                          Text(
-                            CHOOSE_NUMBER,
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: whiteColor,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16, top: 16),
-                        child: Text(
-                          CHOOSE,
-                          style: TextStyle(
-                            color: whiteColor,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+              Opacity(
+                opacity: 0.9,
+                child: Container(
+                  height: 300,
+                  width: double.infinity,
+                  color: primaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 10,
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16),
-                        child: Text(
-                          FNUMBERS,
-                          style: TextStyle(
-                              color: whiteColor,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 16,
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 16, right: 16),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Container(
-                              width: 50,
-                              height: 65,
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(25),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: <Widget>[
+                            IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              icon: Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
                               ),
-                              child: Center(
-                                  child: Text(
-                                '12',
-                                style: TextStyle(
-                                    color: primaryColor, fontSize: 18),
-                              )),
                             ),
-                            Container(
-                              width: 50,
-                              height: 65,
-                              decoration: BoxDecoration(
+                            Text(
+                              CHOOSE_NUMBER,
+                              style: TextStyle(
+                                fontSize: 16,
                                 color: whiteColor,
-                                borderRadius: BorderRadius.circular(25),
+                                fontWeight: FontWeight.bold,
                               ),
-                              child: Center(
-                                  child: Text(
-                                '18',
-                                style: TextStyle(
-                                    color: primaryColor, fontSize: 18),
-                              )),
-                            ),
-                            Container(
-                              width: 50,
-                              height: 65,
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(25),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                '22',
-                                style: TextStyle(
-                                    color: primaryColor, fontSize: 18),
-                              )),
-                            ),
-                            Container(
-                              width: 50,
-                              height: 65,
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(25),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                '26',
-                                style: TextStyle(
-                                    color: primaryColor, fontSize: 18),
-                              )),
-                            ),
-                            Container(
-                              width: 50,
-                              height: 65,
-                              decoration: BoxDecoration(
-                                color: whiteColor,
-                                borderRadius: BorderRadius.circular(25),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                '30',
-                                style: TextStyle(
-                                    color: primaryColor, fontSize: 18),
-                              )),
                             ),
                           ],
                         ),
-                      )
-                    ],
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16, top: 16),
+                          child: Text(
+                            CHOOSE,
+                            style: TextStyle(
+                              color: whiteColor,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16),
+                          child: Text(
+                            FNUMBERS,
+                            style: TextStyle(
+                                color: whiteColor,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 16,
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 16, right: 16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Container(
+                                width: 50,
+                                height: 65,
+                                decoration: BoxDecoration(
+                                  color: whiteColor,
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  '12',
+                                  style: TextStyle(
+                                      color: primaryColor, fontSize: 18),
+                                )),
+                              ),
+                              Container(
+                                width: 50,
+                                height: 65,
+                                decoration: BoxDecoration(
+                                  color: whiteColor,
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  '18',
+                                  style: TextStyle(
+                                      color: primaryColor, fontSize: 18),
+                                )),
+                              ),
+                              Container(
+                                width: 50,
+                                height: 65,
+                                decoration: BoxDecoration(
+                                  color: whiteColor,
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  '22',
+                                  style: TextStyle(
+                                      color: primaryColor, fontSize: 18),
+                                )),
+                              ),
+                              Container(
+                                width: 50,
+                                height: 65,
+                                decoration: BoxDecoration(
+                                  color: whiteColor,
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  '26',
+                                  style: TextStyle(
+                                      color: primaryColor, fontSize: 18),
+                                )),
+                              ),
+                              Container(
+                                width: 50,
+                                height: 65,
+                                decoration: BoxDecoration(
+                                  color: whiteColor,
+                                  borderRadius: BorderRadius.circular(25),
+                                ),
+                                child: Center(
+                                    child: Text(
+                                  '30',
+                                  style: TextStyle(
+                                      color: primaryColor, fontSize: 18),
+                                )),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -220,24 +229,37 @@ class _ChooseNumberState extends State<ChooseNumber>
                   children: <Widget>[
                     Container(
                       margin:
-                          const EdgeInsets.only(top: 20, left: 60, right: 60),
+                          const EdgeInsets.only(top: 20, left: 20, right: 20),
                       height: 40,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: _buildCircles(),
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(0),
+                            child: Text(
+                              "02:00 PM",
+                              style: TextStyle(
+                                  fontSize: 18, color: Colors.grey[600]),
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Single',
+                                style: TextStyle(color: Colors.grey[600]),
+                              ),
+                              Icon(Icons.arrow_drop_down),
+                            ],
+                          )
+                        ],
                       ),
                     ),
-                    IntrinsicHeight(
-                      child: Container(
-                        margin:
-                            const EdgeInsets.only(top: 20, left: 40, right: 40),
-                        child: Keyboard(
-                          onKeyboardTap: _onKeyboardButtonPressed,
-                          shouldShowCancel: enterednumbers.isEmpty,
-                          keyboardUIConfig: widget.keyboardUIConfig != null
-                              ? widget.keyboardUIConfig
-                              : KeyboardUIConfig(),
-                        ),
+                    Container(
+                      child: Keyboard(
+                        onKeyboardTap: _onKeyboardButtonPressed,
+                        keyboardUIConfig: widget.keyboardUIConfig != null
+                            ? widget.keyboardUIConfig
+                            : KeyboardUIConfig(),
                       ),
                     ),
                     SizedBox(
@@ -273,20 +295,20 @@ class _ChooseNumberState extends State<ChooseNumber>
     );
   }
 
-  List<Widget> _buildCircles() {
-    var list = <Widget>[];
-    var config = widget.circleUIConfig != null
-        ? widget.circleUIConfig
-        : CircleUIConfig();
-    config!.extraSize = animation!.value;
-    for (int i = 0; i < widget.expectedDigits; i++) {
-      list.add(Circle(
-        filled: i < enterednumbers.length,
-        circleUIConfig: config,
-      ));
-    }
-    return list;
-  }
+  // List<Widget> _buildCircles() {
+  //   var list = <Widget>[];
+  //   var config = widget.circleUIConfig != null
+  //       ? widget.circleUIConfig
+  //       : CircleUIConfig();
+  //   config!.extraSize = animation!.value;
+  //   for (int i = 0; i < widget.expectedDigits; i++) {
+  //     list.add(Circle(
+  //       filled: i < enterednumbers.length,
+  //       circleUIConfig: config,
+  //     ));
+  //   }
+  //   return list;
+  // }
 
   _onKeyboardButtonPressed(String text) {
     setState(() {
